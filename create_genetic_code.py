@@ -4,15 +4,15 @@ import os
 
 def genetic_code_to_json():
     """
-      This function generates json file with genetic code 
+      This function generates json file with genetic code
       and directory "data" in the project root.
 
-      The code is then read from the generated file 
+      The code is then read from the generated file
       and used by the function "convert_rna_to_protein".
     """
 
     genetic_code = {
-        "U":{ 
+        "U":{
             "U":{"U":"F", "C":"F", "A":"L", "G":"L"},
             "C":{"U":"S", "C":"S", "A":"S", "G":"S"},
             "A":{"U":"Y", "C":"Y", "A":".", "G":"."},
