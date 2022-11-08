@@ -51,7 +51,7 @@ def test_function(function, input_seq, output_seq):
 	        print()
 
 	if failed_tests > 0:
-	    print("Failed", failed_tests, "tests out of", len(correct_rna))
+	    print("Failed", failed_tests, "tests out of", len(output_seq))
 	else:
 	    print("All tests passed successfully")
 
