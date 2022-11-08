@@ -40,7 +40,7 @@ def genetic_code_to_json():
 
     try:
         os.mkdir("./data")
-    except:
+    except FileExistsError:
         print("The directory 'data' already exists")
 
     with open("./data/genetic_code.json", "w") as code_json:

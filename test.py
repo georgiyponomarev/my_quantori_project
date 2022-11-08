@@ -43,7 +43,7 @@ def test_function(function, input_seq, output_seq):
 	    result = function(test_in)
 	    try:
 	        assert result == test_out
-	    except:
+	    except AssertionError:
 	        failed_tests += 1
 	        print('*** Error! ***')
 	        print("result:", result)
