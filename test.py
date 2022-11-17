@@ -34,26 +34,27 @@ correct_protein = [
 
 
 def test_function(function, input_seq, output_seq):
-	"""
-       Check if the functions output correct results 
-	"""
+    """
+        Check if the functions output correct results 
+    """
 
-	failed_tests = 0
-	for test_in, test_out in zip(input_seq, output_seq):
-	    result = function(test_in)
-	    try:
-	        assert result == test_out
-	    except AssertionError:
-	        failed_tests += 1
-	        print('*** Error! ***')
-	        print("result:", result)
-	        print("correct:", test_out)
-	        print()
+    print(f"Testing function {function.__name__}:")
+    failed_tests = 0
+    for test_in, test_out in zip(input_seq, output_seq):
+        result = function(test_in)
+        try:
+            assert result == test_out
+        except AssertionError:
+            failed_tests += 1
+            print('*** Error! ***')
+            print("result:", result)
+            print("correct:", test_out)
+            print()
 
-	if failed_tests > 0:
-	    print("Failed", failed_tests, "tests out of", len(output_seq))
-	else:
-	    print("All tests passed successfully")
+    if failed_tests > 0:
+        print("Failed", failed_tests, "tests out of", len(output_seq))
+    else:
+        print("All tests passed successfully\n")
 
 
 test_function(convert_dna_to_rna, input_dna, correct_rna)
