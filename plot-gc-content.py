@@ -5,12 +5,12 @@ import random
 
 def plot_gc_content_ratio(genome_position:np.array,
                   gc_content:np.array,
-                  dataset = "random DNA sequence",
-                  outfile = "gc-content.png",
-                  figsize = (8, 6),
-                  fontsize = 14,
-                  linewidth = 3,
-                  linecolor = "indigo"
+                  dataset:str = "random DNA sequence",
+                  outfile:str = "gc-content.png",
+                  figsize:tuple = (8, 6),
+                  fontsize:int = 14,
+                  linewidth:int = 3,
+                  linecolor:str = "indigo"
                   ):
 
     """
@@ -47,7 +47,7 @@ def plot_gc_content_ratio(genome_position:np.array,
 def gc_content_ratio(genomic_data:str, 
                      step:int = 100, 
                      dataset_name:str = "random DNA sequence",
-                     outfile_name = "gc-content.png"
+                     outfile_name:str = "gc-content.png"
                      ):
     """
        A function that 
