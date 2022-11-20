@@ -30,12 +30,11 @@ class ConverterTest(unittest.TestCase):
     Methods
     -------
     test_convert_dna_to_rna(self, case):
-        Tests the function 'convert_dna_to_rna'
-  
-        argument 'case' is the tuple of two
-        strings: a DNA sequence -- function input
-        and a RNA sequence -- correct output of 
-        the function.
+        Tests the dna to rna converter function
+
+        argument 'case' is the tuple of two strings: 
+          a DNA sequence -- function input and 
+          a RNA sequence -- correct output
 
     test_convert_rna_to_protein(self, case):
         Analogous method for testing rna to
