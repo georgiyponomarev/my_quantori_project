@@ -11,7 +11,14 @@ test_cases_rna_to_protein = []
 # the csv file contains rows with dna, rna and protein sequences
 # ----------------
 with open("tests/test_data.csv") as file:
+    first_line = True
     for line in file.read().splitlines():
+
+        # Skip dataset header
+        if first_line:
+            first_line = False
+            continue
+
         case = line.split(",")
         dna, rna, protein = case[0], case[1], case[2]
         test_cases_dna_to_rna.append((dna, rna))
