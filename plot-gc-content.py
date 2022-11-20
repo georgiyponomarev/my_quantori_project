@@ -3,14 +3,17 @@ import matplotlib.pyplot as plt
 import random
 
 
-def plot_gc_content_ratio(genome_position:np.array,
-                  gc_content:np.array,
-                  dataset:str = "random DNA sequence",
-                  outfile:str = "gc-content.png",
-                  figsize:tuple = (8, 6),
-                  fontsize:int = 14,
-                  linewidth:int = 3,
-                  linecolor:str = "indigo"
+IMAGES_DIR = "./gc-content_ratios"
+
+
+def plot_gc_content_ratio(genome_position: np.array,
+                  gc_content: np.array,
+                  dataset: str = "random DNA sequence",
+                  outfile: str = IMAGES_DIR + "/gc-content.png",
+                  figsize: tuple = (8, 6),
+                  fontsize: int = 14,
+                  linewidth: int = 3,
+                  linecolor: str = "indigo"
                   ):
 
     """
@@ -44,10 +47,10 @@ def plot_gc_content_ratio(genome_position:np.array,
     plt.close()
 
 
-def gc_content_ratio(genomic_data:str, 
-                     step:int = 100, 
-                     dataset_name:str = "random DNA sequence",
-                     outfile_name:str = "gc-content.png"
+def gc_content_ratio(genomic_data: str, 
+                     step: int = 100, 
+                     dataset_name: str = "random DNA sequence",
+                     outfile_name: str = IMAGES_DIR + "/gc-content.png"
                      ):
     """
        A function that 
@@ -111,5 +114,5 @@ with open("./covid/ncbi_dataset/data/genomic.fna", "r") as dataset:
 
 gc_content_ratio(covid_genome, 
                  dataset_name = "SARS-CoV-2 genome",
-                 outfile_name = "Corona.png" 
+                 outfile_name = IMAGES_DIR + "/Corona.png" 
                 )
