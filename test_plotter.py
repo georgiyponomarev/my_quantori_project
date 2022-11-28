@@ -10,7 +10,7 @@ TEST_IMAGES_DIR = "./tests/gc-content_plots"
 try:
     os.mkdir(TEST_IMAGES_DIR)
 except FileExistsError:
-	print(f"Folder {TEST_IMAGES_DIR} already exists")
+    print(f"Folder {TEST_IMAGES_DIR} already exists")
 
 """
 Prepare input test data: correct one contains only
