@@ -6,11 +6,11 @@ import random
 IMAGES_DIR = "./gc-content_ratios"
 
 
-def gc_content_ratio(
+def plot_gc_content_ratio(
     genomic_data: str, 
     step: int = 100, 
     dataset_name: str = "random DNA sequence",
-    outfile_name: str = IMAGES_DIR + "/gc-content.png", 
+    outfile_name: str = f"{IMAGES_DIR}/gc-content.png", 
     figsize: tuple = (8, 6),
     fontsize: int = 14,
     linewidth: int = 3,
@@ -19,10 +19,15 @@ def gc_content_ratio(
 
     """
        A function that 
-       (1) calculates CG-content ratio for each of
-       the 'step' segments of the molecule, which DNA sequence
-       is given in the 'genomic_data' parameter and
-       (2) plots the GC ratio and saves the graph to image file
+       (1) analyzes if the input sequence is correct, i.e.
+           contains only DNA bases 'A', 'T', 'G' and 'C'.
+           * If the input is incorrect, returns False and 
+           prints the info about an incorrect input.
+           * If the input is correct:
+             (2) calculates CG-content ratio for each of
+                 the 'step' segments of the molecule, which DNA sequence
+                 is given in the 'genomic_data' parameter and
+             (3) plots the GC ratio and saves the graph to image file
 
        In the plot:
            * x-axis: Genome position -- position of first base
@@ -36,8 +41,29 @@ def gc_content_ratio(
                           By default bin width = 100 characters.
           * other parameters are intended to make the graph 
             prettier and more descriptive
+
+        Returns: 
+            * True if the input sequence is correct,
+            * False, otherwise. No plot is produced
     """
 
+    # convert input sequence to uppercase if lowercase is provided 
+    genomic_data = genomic_data.upper()
+
+    # check the correctness of the input sequence
+    # --------------------------------------------------------    
+    a = genomic_data.count("A")
+    t = genomic_data.count("T")
+    g = genomic_data.count("G")
+    c = genomic_data.count("C")
+
+    if a + t + g + c != len(genomic_data):
+        print("Input sequence is incorrect! Plot is not produced!")
+        return False
+
+
+    # calculate gc-content ratio
+    # --------------------------------------------------------
     molecule_length = len(genomic_data)
     number_of_bins = molecule_length // step
     gc_content = np.zeros(number_of_bins)
@@ -52,6 +78,9 @@ def gc_content_ratio(
             genome_position[index] = start_base
         index += 1
 
+
+    # plot gc-content ratio
+    # --------------------------------------------------------
     plt.figure(figsize = figsize)
     plt.plot(genome_position,
              gc_content,
@@ -65,17 +94,19 @@ def gc_content_ratio(
     plt.savefig(outfile_name)
     plt.close()
 
+    return True
 
-# *** Some tests ***
-#
+
+# *** Some examples: ***
+
 # (1) Plot GC-content distribution for the random DNA sequence
 dna_bases = ["A", "G", "C", "T"]
 genome = ""
-for i in range(10001):
+for i in range(10000):
     base = random.choice(dna_bases)
     genome += base
 
-gc_content_ratio(genome)
+plot_gc_content_ratio(genome)
 
 
 # (2) Plot the GC-content distribution for the SARS-CoV-2 genome
@@ -91,7 +122,7 @@ with open("./covid/ncbi_dataset/data/genomic.fna", "r") as dataset:
             continue
         covid_genome += line.replace("\n", "")
 
-gc_content_ratio(covid_genome, 
+plot_gc_content_ratio(covid_genome, 
                  dataset_name = "SARS-CoV-2 genome",
-                 outfile_name = IMAGES_DIR + "/Corona.png" 
+                 outfile_name = f"{IMAGES_DIR}/Corona.png"
                 )

@@ -1,5 +1,5 @@
 import unittest
-from ddt import ddt, data, unpack
+from ddt import ddt, data
 from converters import convert_dna_to_rna, convert_rna_to_protein
 
 
@@ -32,7 +32,7 @@ with open("tests/test_data.csv") as file:
 @ddt
 class ConverterTest(unittest.TestCase):
     """
-    A class that creates unit tests for the two 
+    The class that creates unit tests for the two 
     converter functions: dna to rna and 
     rna to protein
 
