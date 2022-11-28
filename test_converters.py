@@ -1,6 +1,6 @@
 import unittest
 from ddt import ddt, data, unpack
-from script import convert_dna_to_rna, convert_rna_to_protein
+from converters import convert_dna_to_rna, convert_rna_to_protein
 
 
 test_cases_dna_to_rna = []
@@ -55,12 +55,12 @@ class ConverterTest(unittest.TestCase):
     """
 
     @data(*test_cases_dna_to_rna)
-    def test_convert_dna_to_rna(self, case: tuple):
+    def test_convert_dna_to_rna(self, case):
         dna, rna = case
         self.assertEqual(convert_dna_to_rna(dna), rna)
 
     @data(*test_cases_rna_to_protein)
-    def test_convert_rna_to_protein(self, case: tuple):
+    def test_convert_rna_to_protein(self, case):
         rna, protein = case
         self.assertEqual(convert_rna_to_protein(rna), protein)
 
