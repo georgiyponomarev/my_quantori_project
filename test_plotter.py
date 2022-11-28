@@ -1,7 +1,6 @@
 import os
 import random
 import unittest
-from ddt import ddt, data
 from plot_gc_content import plot_gc_content_ratio
 
 
