@@ -12,6 +12,7 @@ test_cases_rna_to_protein = []
 # ----------------
 with open("tests/test_data.csv") as file:
     first_line = True
+    test_number = 1
     for line in file.read().splitlines():
 
         # Skip dataset header
@@ -21,9 +22,10 @@ with open("tests/test_data.csv") as file:
 
         case = line.split(",")
         dna, rna, protein = case[0], case[1], case[2]
-        test_cases_dna_to_rna.append((dna, rna))
-        test_cases_rna_to_protein.append((rna, protein))
-
+        test_cases_dna_to_rna.append((test_number, dna, rna))
+        test_cases_rna_to_protein.append((test_number, rna, protein))
+        
+        test_number += 1
 
 # create unit tests
 # -----------------
@@ -56,12 +58,14 @@ class ConverterTest(unittest.TestCase):
 
     @data(*test_cases_dna_to_rna)
     def test_convert_dna_to_rna(self, case):
-        dna, rna = case
+        test_number, dna, rna = case
+        print(f"Testing DNA to RNA converter. Test #{test_number}")
         self.assertEqual(convert_dna_to_rna(dna), rna)
 
     @data(*test_cases_rna_to_protein)
     def test_convert_rna_to_protein(self, case):
-        rna, protein = case
+        test_number, rna, protein = case
+        print(f"Testing RNA to protein converter. Test #{test_number}")
         self.assertEqual(convert_rna_to_protein(rna), protein)
 
 
