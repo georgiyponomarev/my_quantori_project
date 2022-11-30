@@ -14,7 +14,7 @@ option, *args = sys.argv[1:]
 
 
 def read_sequence(path_to_file: str) -> str:
-    """ This function reads a DNA sequence from
+    """ This function reads a sequence from
         text file and returns a string object, 
         containing the sequence. 
         The file is assumed to have a header line
