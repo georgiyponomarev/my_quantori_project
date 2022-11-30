@@ -1,0 +1,61 @@
+This is run.py script documentation. 
+
+Type enter for scroll down.
+Type q to exit
+
+how to use:
+    type in a command line the following:
+    python run.py [option] [parameters]
+
+!!! create database prior to executing functions:
+run configure_postgresql.py and then database_manager.py
+
+[option] may be one of the following:
+    help -- print the hints on usage
+    convert -- run converter functions
+    plot -- create plots
+    test -- test converter or plotter functions
+
+    if no option is specified the program terminates
+
+[parameters] are needed if the [option] is convert, plot or test
+    
+    1) python run.py convert function -f path-to-file -o path-to-file:
+       or, alternatively
+       python run.py convert function sequence -o path-to-file:
+
+        function -- a converter function
+
+        -f path-to-file -- a flag which states that the input sequence 
+               will be read from file; 
+               after -f a path to file should be provided, 
+               otherwise the program will terminate
+
+        sequence (a string without -f) -- if -f is absent, 
+                                   then a string is treated 
+                                   either as a dna or rna sequence.
+                                   The sequences should contain only
+                                   valid input otherwise the program 
+                                   will terminate without an output
+        
+        -o path-to-file -- specified after an input file path or 
+                           after a string with dna/rna sequence
+                           without -o the result will be printer 
+                           in the console
+
+    2) python run.py plot path-to-file output-image:
+        
+        path-to-file -- a path to input file with genome
+        output-image -- e.g. "covid-19.png"
+
+        you can specify only these two parameters. 
+        What is given afterwards is ignored
+
+    3) python run.py test [parameters]:
+
+        converters -- run the unit-tests for converter functions
+        plotter -- run the unit-tests for plotter functions
+
+        you can specify only one parameter. What is given after
+        parameter name is ignored
+
