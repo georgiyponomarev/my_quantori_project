@@ -56,26 +56,32 @@ class PlotterTest(unittest.TestCase):
     """
 
     def test_correct_input(self):
-    	self.assertTrue(
-    	    plot_gc_content_ratio(
-    	        genomic_data = correct_input,
-    	        outfile_name = f"{TEST_IMAGES_DIR}/{correct_output}"
-    	    )
+        print(f"Testing if the input data is correct")
+        self.assertTrue(
+            plot_gc_content_ratio(
+                genomic_data = correct_input,
+                outdir_name = f"{TEST_IMAGES_DIR}",
+                outfile_name = f"{correct_output}"
+            )
         )
 
     def test_incorrect_input(self):
-    	self.assertFalse(
-    	    plot_gc_content_ratio(
-    		    genomic_data = incorrect_input,
-    		    outfile_name = f"{TEST_IMAGES_DIR}/{incorrect_output}"
-    	    )
+        print(f"Testing if the function returns False given the input is incorrect")
+        self.assertFalse(
+            plot_gc_content_ratio(
+                genomic_data = incorrect_input,
+                outdir_name = f"{TEST_IMAGES_DIR}",
+                outfile_name = f"{incorrect_output}"
+            )
         )
 
     def test_image_exists_if_input_correct(self):
+        print(f"Testing if the function produces image output given the correct input")
         imagedir = os.listdir(TEST_IMAGES_DIR)
         self.assertIn(correct_output, imagedir)
 
     def test_no_image_if_input_incorrect(self):
+        print(f"Testing if the function produces no image output given the incorrect input")
         imagedir = os.listdir(TEST_IMAGES_DIR)
         self.assertNotIn(incorrect_output, imagedir)    	
 

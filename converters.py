@@ -13,6 +13,9 @@ def convert_dna_to_rna(dna_sequence) -> str:
       returned as a string as well. 
     """
 
+    # convert input to uppercase
+    dna_sequence = dna_sequence.upper()
+
     engine = create_engine(DB_URI)
     Session = sessionmaker(bind = engine)
 
@@ -35,6 +38,9 @@ def convert_rna_to_protein(rna_sequence) -> str:
       returned as a string as well. 
     """
 
+    # convert input to uppercase
+    dna_sequence = dna_sequence.upper()
+
     engine = create_engine(DB_URI)
     Session = sessionmaker(bind = engine)
 
@@ -50,4 +56,3 @@ def convert_rna_to_protein(rna_sequence) -> str:
                 protein_sequence += aminoacid.aminoacid_letter
 
     return protein_sequence
-

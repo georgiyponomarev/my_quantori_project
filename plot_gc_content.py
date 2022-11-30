@@ -10,7 +10,8 @@ def plot_gc_content_ratio(
     genomic_data: str, 
     step: int = 100, 
     dataset_name: str = "random DNA sequence",
-    outfile_name: str = f"{IMAGES_DIR}/gc-content.png", 
+    outdir_name: str = f"{IMAGES_DIR}/",
+    outfile_name: str = f"gc-content.png", 
     figsize: tuple = (8, 6),
     fontsize: int = 14,
     linewidth: int = 3,
@@ -91,7 +92,7 @@ def plot_gc_content_ratio(
     plt.ylabel("GC-content, %", fontsize = fontsize)
     plt.xticks(fontsize = fontsize)
     plt.yticks(fontsize = fontsize)
-    plt.savefig(outfile_name)
+    plt.savefig(f"{outdir_name}/{outfile_name}")
     plt.close()
 
     return True
@@ -124,5 +125,5 @@ with open("./covid/ncbi_dataset/data/genomic.fna", "r") as dataset:
 
 plot_gc_content_ratio(covid_genome, 
                  dataset_name = "SARS-CoV-2 genome",
-                 outfile_name = f"{IMAGES_DIR}/Corona.png"
+                 outfile_name = "Corona.png"
                 )
