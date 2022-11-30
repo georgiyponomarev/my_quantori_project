@@ -39,7 +39,7 @@ def convert_rna_to_protein(rna_sequence) -> str:
     """
 
     # convert input to uppercase
-    dna_sequence = dna_sequence.upper()
+    rna_sequence = rna_sequence.upper()
 
     engine = create_engine(DB_URI)
     Session = sessionmaker(bind = engine)
