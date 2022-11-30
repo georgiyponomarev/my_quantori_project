@@ -61,6 +61,6 @@ def convert_rna_to_protein(rna_sequence: str) -> str:
 def convert_dna_to_protein(dna_sequence: str) -> str:
     """ A pipeline for both translation and transcription """
 
-    rna = convert_dna_to_rna(dna_sequence)
-    protein_sequence = convert_rna_to_protein(rna)
+    rna_sequence = convert_dna_to_rna(dna_sequence)
+    protein_sequence = convert_rna_to_protein(rna_sequence)
     return protein_sequence
