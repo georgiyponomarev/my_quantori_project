@@ -1,0 +1,2 @@
+The output from convert_dna_to_rna
+AAAGGG

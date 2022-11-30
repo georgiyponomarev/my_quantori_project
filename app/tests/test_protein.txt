@@ -1,0 +1,2 @@
+The output from convert_rna_to_protein
+KG
