@@ -99,26 +99,26 @@ def plot_gc_content_ratio(
 # *** Some examples: ***
 
 # (1) Plot GC-content distribution for the random DNA sequence
-dna_bases = ["A", "G", "C", "T"]
-genome = ""
-for i in range(10000):
-    base = random.choice(dna_bases)
-    genome += base
+# dna_bases = ["A", "G", "C", "T"]
+# genome = ""
+# for i in range(10000):
+#     base = random.choice(dna_bases)
+#     genome += base
 
-plot_gc_content_ratio(genome)
+# plot_gc_content_ratio(genome)
 
 
-# (2) Plot the GC-content distribution for the SARS-CoV-2 genome
-# source: https://www.ncbi.nlm.nih.gov/data-hub/taxonomy/2697049/
-covid_genome = ""
-with open("./covid/ncbi_dataset/data/genomic.fna", "r") as dataset:
-    first_line = True
-    for line in dataset.readlines():
+# # (2) Plot the GC-content distribution for the SARS-CoV-2 genome
+# # source: https://www.ncbi.nlm.nih.gov/data-hub/taxonomy/2697049/
+# covid_genome = ""
+# with open("./covid/ncbi_dataset/data/genomic.fna", "r") as dataset:
+#     first_line = True
+#     for line in dataset.readlines():
         
-        # Skip dataset header
-        if first_line:
-            first_line = False
-            continue
-        covid_genome += line.replace("\n", "")
+#         # Skip dataset header
+#         if first_line:
+#             first_line = False
+#             continue
+#         covid_genome += line.replace("\n", "")
 
-plot_gc_content_ratio(covid_genome, outfile_name = "Corona.png")
+# plot_gc_content_ratio(covid_genome, outfile_name = "Corona.png")
