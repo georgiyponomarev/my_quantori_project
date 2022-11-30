@@ -16,6 +16,17 @@ def convert_dna_to_rna(dna_sequence: str) -> str:
     # convert input to uppercase
     dna_sequence = dna_sequence.upper()
 
+    # check the correctness of the input sequence
+    # --------------------------------------------------------    
+    a = dna_sequence.count("A")
+    t = dna_sequence.count("T")
+    g = dna_sequence.count("G")
+    c = dna_sequence.count("C")
+
+    if a + t + g + c != len(dna_sequence):
+        print("Input sequence is incorrect!")
+        return None
+
     engine = create_engine(DB_URI)
     Session = sessionmaker(bind = engine)
 
@@ -40,6 +51,17 @@ def convert_rna_to_protein(rna_sequence: str) -> str:
 
     # convert input to uppercase
     rna_sequence = rna_sequence.upper()
+
+    # check the correctness of the input sequence
+    # --------------------------------------------------------    
+    a = rna_sequence.count("A")
+    u = rna_sequence.count("U")
+    g = rna_sequence.count("G")
+    c = rna_sequence.count("C")
+
+    if a + u + g + c != len(rna_sequence):
+        print("Input sequence is incorrect!")
+        return None
 
     engine = create_engine(DB_URI)
     Session = sessionmaker(bind = engine)

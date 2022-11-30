@@ -2,7 +2,8 @@ import unittest
 from ddt import ddt, data
 from converters import convert_dna_to_rna, convert_rna_to_protein
 
-
+incorrect_input_dna = "atgce"
+incorrect_input_rna = "augce"
 test_cases_dna_to_rna = []
 test_cases_rna_to_protein = []
 
@@ -67,6 +68,14 @@ class ConverterTest(unittest.TestCase):
         test_number, rna, protein = case
         print(f"Testing RNA to protein converter. Test #{test_number}")
         self.assertEqual(convert_rna_to_protein(rna), protein)
+
+    def test_convert_dna_to_rna_invalid_input(self):
+        print(f"Testing that dna2rna converter returns None if the input is not DNA")
+        self.assertIsNone(convert_dna_to_rna(incorrect_input_dna))
+
+    def test_convert_rna_to_protein_invalid_input(self):
+        print(f"Testing that rna2protein converter returns None if the input is not RNA")
+        self.assertIsNone(convert_dna_to_rna(incorrect_input_dna))
 
 
 # perform unit tests
