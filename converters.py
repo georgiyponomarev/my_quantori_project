@@ -6,7 +6,7 @@ from database_manager import (
 )
 
 
-def convert_dna_to_rna(dna_sequence) -> str:
+def convert_dna_to_rna(dna_sequence: str) -> str:
     """
       Function that converts input DNA sequence,
       given as a string, to RNA sequence, 
@@ -31,7 +31,7 @@ def convert_dna_to_rna(dna_sequence) -> str:
     return rna_sequence
 
 
-def convert_rna_to_protein(rna_sequence) -> str:
+def convert_rna_to_protein(rna_sequence: str) -> str:
     """
       Function that converts input RNA sequence,
       given as a string, to protein sequence, 
@@ -55,4 +55,12 @@ def convert_rna_to_protein(rna_sequence) -> str:
                 aminoacid = session.query(AminoAcids).get(aminoacid_id)
                 protein_sequence += aminoacid.aminoacid_letter
 
+    return protein_sequence
+
+
+def convert_dna_to_protein(dna_sequence: str) -> str:
+    """ A pipeline for both translation and transcription """
+
+    rna = convert_dna_to_rna(dna_sequence)
+    protein_sequence = convert_rna_to_protein(rna)
     return protein_sequence
