@@ -1,5 +1,6 @@
 import random
 import sys
+from config import APP_DIR
 from converters import (
     convert_dna_to_rna, convert_rna_to_protein, 
     convert_dna_to_protein    
@@ -44,7 +45,7 @@ def read_sequence(path_to_file: str) -> str:
 # ***************************************************************
 # view help
 if option == "help":
-    os.system("less ./doc/run_help.txt")
+    os.system(f"less {APP_DIR}/doc/run_help.txt")
 
 
 # ***************************************************************
@@ -127,7 +128,7 @@ elif option == "test":
     try:
         test_module = args[0]
         test_module = tests[test_module]
-        os.system(f"python {test_module}") 
+        os.system(f"python {APP_DIR}/{test_module}") 
     except KeyError:
         print(f"invalid parameter {args[0]} given. Try one of the following\n")
         for parameter, module in tests.items():

@@ -1,5 +1,5 @@
 import json
-from config import DB_URI
+from config import DB_URI, APP_DIR
 from sqlalchemy import (
     Column, DateTime, ForeignKey, Integer, String,
     create_engine,
@@ -78,7 +78,7 @@ dna_bases = ["A", "G", "C", "T"]
 rna_bases = ["A", "G", "C", "U"]
 
 # load genetic code from file
-with open('./data/genetic_code.json', 'r') as json_file:
+with open(f'{APP_DIR}/data/genetic_code.json', 'r') as json_file:
     genetic_code = json.load(json_file)
 
 amino_acids = []

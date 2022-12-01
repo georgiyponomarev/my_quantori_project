@@ -1,9 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+from config import APP_DIR
 
 
-IMAGES_DIR = "./gc-content_ratios"
+IMAGES_DIR = f"{APP_DIR}/gc-content_ratios"
 
 
 def plot_gc_content_ratio(

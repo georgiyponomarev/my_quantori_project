@@ -1,4 +1,5 @@
 import unittest
+from config import APP_DIR
 from ddt import ddt, data
 from converters import convert_dna_to_rna, convert_rna_to_protein
 
@@ -11,7 +12,7 @@ test_cases_rna_to_protein = []
 # read the test data from the csv file
 # the csv file contains rows with dna, rna and protein sequences
 # ----------------
-with open("tests/test_data.csv") as file:
+with open(f"{APP_DIR}/tests/test_data.csv") as file:
     first_line = True
     test_number = 1
     for line in file.read().splitlines():

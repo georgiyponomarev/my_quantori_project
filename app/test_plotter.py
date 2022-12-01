@@ -1,12 +1,13 @@
 import os
 import random
 import unittest
+from config import APP_DIR
 from plot_gc_content import plot_gc_content_ratio
 
 
 # Create folder with test plots
 # ---------------------------------------------------
-TEST_IMAGES_DIR = "./tests/gc-content_plots"
+TEST_IMAGES_DIR = f"{APP_DIR}/tests/gc-content_plots"
 try:
     os.mkdir(TEST_IMAGES_DIR)
 except FileExistsError:

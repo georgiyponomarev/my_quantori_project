@@ -38,3 +38,6 @@ def convert_rna_to_protein(rna_sequence) -> str:
             protein += genetic_code[codon[0]][codon[1]][codon[2]]
 
     return protein
+
+
+print(convert_dna_to_rna("AAAGGGTTTCCC"))
