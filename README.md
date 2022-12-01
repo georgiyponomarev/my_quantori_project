@@ -35,9 +35,10 @@ Namely, the tools for:
 ---
 
 **ToDo!!!** 
+
 Pack an app to Docker container and create a container with PostgreSQL database.
+
 Run the app in Docker
-:(
 
 **How the project looks like at the moment (01/12/2022 6:00 AM):**
 * The project root contains README.md, LICENSE, .gitignore and the folder with the app
