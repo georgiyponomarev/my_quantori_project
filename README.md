@@ -13,7 +13,7 @@ Namely, the tools for:
 **How to use (some examples)**
 1. run the `configure_postgresql.py` and `database_manager.py` to set up
    a database (needed only at the first run; *Task 2*)
-2. run `python ./app/run.py` in terminal with command line arguments (*Task 4*):
+2. run `python ./app/run.py` in terminal with command line arguments (*a part of Task 4*):
    
 **Task 1 examples:**  
 * `python ./app/run.py convert dna2rna "AGCT"` -- the input DNA sequence will be read from the command line
