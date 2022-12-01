@@ -2,8 +2,10 @@
 Quantori Python Academy project
 
 **Brief description of the project**
+
 A set of tools for processing and analysis of the genomic data.
 Namely, the tools for:
+
 * DNA to RNA trancription, 
 * RNA to protein translation
 * Creating plots of GC-content ratio in a given DNA sequence
