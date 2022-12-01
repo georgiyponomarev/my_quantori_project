@@ -30,7 +30,7 @@ Namely, the tools for:
 * `python ./app/run.py test converters` -- perform unit-test for plotter function
 
 **Call for help**
-* `python ./app/run.py help`*
+* `python ./app/run.py help`
 
 ---
 
