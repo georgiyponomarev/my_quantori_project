@@ -11,7 +11,7 @@ Namely, the tools for:
 * Creating plots of GC-content ratio in a given DNA sequence
 
 **How to use (some examples)**
-1. run the `configure_postgresql.py` and `database_manager.py` to set up
+1. run the `./app/configure_postgresql.py` and `./app/database_manager.py` to set up
    a database (needed only at the first run; *Task 2*)
 2. run `python ./app/run.py` in terminal with command line arguments (*a part of Task 4*):
    
