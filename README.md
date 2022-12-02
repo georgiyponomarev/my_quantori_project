@@ -27,7 +27,7 @@ Namely, the tools for:
 
 **Task 5 examples:**
 * `python ./app/run.py test converters` -- perform unit-tests for converter functions
-* `python ./app/run.py test converters` -- perform unit-test for plotter function
+* `python ./app/run.py test plotter` -- perform unit-test for plotter function
 
 **Call for help**
 * `python ./app/run.py help`
