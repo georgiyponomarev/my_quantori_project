@@ -10,6 +10,8 @@ Namely, the tools for:
 * RNA to protein translation
 * Creating plots of GC-content ratio in a given DNA sequence
 
+---
+
 **How to use (some examples)**
 
 1. `docker compose up -d --build`  -- create and start the containers with the app (named "genetic_tool") and postgres database
