@@ -17,7 +17,7 @@ Namely, the tools for:
 1. `docker compose up -d --build`  -- create and start the containers with the app (named "genetic_tool") and postgres database
 2. `docker exec -it genetic_tool [command]` -- execute commands within the container "genetic_tool"
 
-[command] -- execute python scripts (or run some linux commands, etc.) 
+`[command]` -- execute python scripts (or run some linux commands, etc.) 
 
 3. `python database_manager.py` -- create a database and fill the tables. Must be executed the first, after the start of the containers 
 4. `python run.py [option] [parameters]`
