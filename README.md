@@ -54,27 +54,28 @@ Namely, the tools for:
 The folder 'app' contains:
 
 **Code files:**    
-    * config.py -- contains a path to a folder with the app and a database URI
-    * database_manager.py -- a program which creates four tables in a database:
+
+* config.py -- contains a path to a folder with the app and a database URI
+* database_manager.py -- a program which creates four tables in a database:
                              1. a table with dna bases
                              2. a table with rna bases
                              3. a table with codons
                              4. a table with amino acids
-    * run.py -- main script which runs different functions (see the documentation
+* run.py -- main script which runs different functions (see the documentation
                 for run.py in ./app/doc/run_help.txt or by typing in the terminal:
                 `python ./app/run.py help`)
-    * converters.py -- contains functions for dna-to-rna, rna-to-protein and dna-to-protein
+* converters.py -- contains functions for dna-to-rna, rna-to-protein and dna-to-protein
                        conversion
-    * plot_gc_content.py -- contains a function which plots GC-content ratio
-    * test_converters.py and test_plotter.py -- for unit-testing of the aforementioned functions
+* plot_gc_content.py -- contains a function which plots GC-content ratio
+* test_converters.py and test_plotter.py -- for unit-testing of the aforementioned functions
 
 **Folders:**
-    * covid -- contains the Covid-19 genome (from https://www.ncbi.nlm.nih.gov/data-hub/taxonomy/2697049/)
-    * data -- contains sqlite database and a json-file with a genetic code used to generate tables 
-    * doc -- contains the documentation for the main script run.py
-    * gc-content_ratios -- a folder where the plots are saved
-    * legacy -- a folder with old versions of the code files
-    * tests -- a folder with the test data 
+
+* covid -- contains the Covid-19 genome (from https://www.ncbi.nlm.nih.gov/data-hub/taxonomy/2697049/)
+* data -- contains sqlite database and a json-file with a genetic code used to generate tables 
+* doc -- contains the documentation for the main script run.py
+* gc-content_ratios -- a folder where the plots are saved
+* legacy -- a folder with old versions of the code files
+* tests -- a folder with the test data 
 
 **Dockerfile**
-    
