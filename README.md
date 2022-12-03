@@ -12,7 +12,7 @@ Namely, the tools for:
 
 ---
 
-**How to use (some examples)**
+**How to use**
 
 1. `docker compose up -d --build`  -- create and start the containers with the app (named "genetic_tools") and postgres database
 2. `docker exec -it genetic_tools [command]` -- execute commands within the container "genetic_tools"
@@ -22,7 +22,7 @@ Namely, the tools for:
 3. `python database_manager.py` -- create a database and fill the tables. Must be executed the first, after the start of the containers 
 4. `python run.py [option] [parameters]`
 
-`[option]` must be one of the following: `convert, plot, test, help`
+`[option]` must be one of the following: convert, plot, test, help
 
 `[parameters]` are described in detail in `./app/doc/run_help.txt`
 
@@ -76,7 +76,7 @@ The folder `app` contains:
 *Folders:*
 
 * `covid` -- contains the Covid-19 genome (from https://www.ncbi.nlm.nih.gov/data-hub/taxonomy/2697049/)
-* `data` -- contains sqlite database and a json-file with a genetic code used to generate tables 
+* `data` -- contains (old) sqlite database and a json-file with a genetic code for generating tables 
 * `doc` -- contains the documentation for the main script run.py
 * `gc-content_ratios` -- a folder where the plots are saved
 * `legacy` -- a folder with old versions of the code files
