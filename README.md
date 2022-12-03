@@ -18,7 +18,7 @@ Namely, the tools for:
 [command] -- execute python scripts (or run some linux commands, etc.) 
 
 3. `python database_manager.py` to create a database and fill the tables. Must be executed the first, after the start of the containers 
-4. `python run.py [option] [parameters]` in.
+4. `python run.py [option] [parameters]`
 
 [option] must be one of the following: convert, plot, test, help
 
@@ -51,9 +51,8 @@ Namely, the tools for:
 * files: docker-compose.yml, README.md, LICENSE, .gitignore and 
 * folders: database (with the lonely Dockerfile) and app
 
-The 'app' folder  contains:
-
-    **Code files:**    
+The folder 'app' contains:
+**Code files:**    
     * config.py -- contains a path to a folder with the app and a database URI
     * database_manager.py -- a program which creates four tables in a database:
                              1. a table with dna bases
@@ -67,14 +66,12 @@ The 'app' folder  contains:
                        conversion
     * plot_gc_content.py -- contains a function which plots GC-content ratio
     * test_converters.py and test_plotter.py -- for unit-testing of the aforementioned functions
-
-    **Folders:**
+**Folders:**
     * covid -- contains the Covid-19 genome (from https://www.ncbi.nlm.nih.gov/data-hub/taxonomy/2697049/)
     * data -- contains sqlite database and a json-file with a genetic code used to generate tables 
     * doc -- contains the documentation for the main script run.py
     * gc-content_ratios -- a folder where the plots are saved
     * legacy -- a folder with old versions of the code files
     * tests -- a folder with the test data 
-    
-    **Dockerfile**
+**Dockerfile**
     
