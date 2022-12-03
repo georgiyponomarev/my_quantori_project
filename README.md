@@ -3,7 +3,7 @@ Quantori Python Academy project
 
 **Brief description of the project**
 
-A set of tools for processing and analysis of the genomic data.
+The app which provides a set of tools for processing and analysis of the genomic data.
 Namely, the tools for:
 
 * DNA to RNA trancription, 
@@ -11,38 +11,45 @@ Namely, the tools for:
 * Creating plots of GC-content ratio in a given DNA sequence
 
 **How to use (some examples)**
-1. run the `./app/configure_postgresql.py` and `./app/database_manager.py` to set up
-   a database (needed only at the first run; *Task 2*)
-2. run `python ./app/run.py` in terminal with command line arguments (*a part of Task 4*):
-   
-**Task 1 examples:**  
-* `python ./app/run.py convert dna2rna "AGCT"` -- the input DNA sequence will be read from the command line
+
+1. `docker compose up -d --build`  -- create and start the containers with the app (named "genetic_tool") and postgres database
+2. `docker exec -it genetic_tool [command]` -- execute commands within the container "genetic_tool"
+
+[command] -- execute python scripts (or run some linux commands, etc.) 
+
+3. `python database_manager.py` to create a database and fill the tables. Must be executed the first, after the start of the containers 
+4. `python run.py [option] [parameters]` in.
+
+[option] may be one of:
+
+* convert
+* plot
+* test
+* help
+
+[parameters] are described in detail in ./app/doc/run_help.txt
+
+**Examples:**
+
+* `python run.py convert dna2rna "AGCT"` -- the input DNA sequence will be read from the command line
                                                   and the output RNA will be printed to stdout
-* `python ./app/run.py convert rna2protein -f (path-to-rna-input-file) -o (path-to-protein-output-file)`
+
+* `python run.py convert rna2protein -f (path-to-rna-input-file) -o (path-to-protein-output-file)`
    in this case, the input RNA sequence is read from file and the output protein sequence is written to another file                                     
 
-**Task 3 example:**
-*  `python ./app/run.py plot ./app/covid/ncbi_dataset/data/genomic.fna covid_test_plot.png` -- read the Covid-19 genetic code
+* `python run.py plot ./covid/ncbi_dataset/data/genomic.fna covid_test_plot.png` -- read the Covid-19 genetic code
     from file and save the image with the GC-content plot to .png file (by default the images are saved to ./app/gc-content_ratios) 
 
-**Task 5 examples:**
-* `python ./app/run.py test converters` -- perform unit-tests for converter functions
-* `python ./app/run.py test plotter` -- perform unit-test for plotter function
+* `python run.py test converters` -- perform unit-tests for converter functions
 
-**Call for help**
-* `python ./app/run.py help`
+* `python run.py test plotter` -- perform unit-test for plotter function
 
----
+* `python run.py help` -- open the documentation for run.py script in *less* text viewer
 
-**ToDo!!!** 
-
-Pack an app to Docker container and create a container with PostgreSQL database.
-
-Run the app in Docker
+5. `docker compose down` -- stop the containers
 
 ---
 
-**How the project looks like at the moment (01/12/2022 6:00 AM):**
 * The project root contains README.md, LICENSE, .gitignore and the folder with the app
 * The 'app' folder  contains:
 
