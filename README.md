@@ -19,12 +19,12 @@ Namely, the tools for:
 
 [command] -- execute python scripts (or run some linux commands, etc.) 
 
-3. `python database_manager.py` to create a database and fill the tables. Must be executed the first, after the start of the containers 
+3. `python database_manager.py` -- create a database and fill the tables. Must be executed the first, after the start of the containers 
 4. `python run.py [option] [parameters]`
 
-[option] must be one of the following: convert, plot, test, help
+`[option]` must be one of the following: `convert, plot, test, help`
 
-[parameters] are described in detail in ./app/doc/run_help.txt
+`[parameters]` are described in detail in `./app/doc/run_help.txt`
 
 5. `docker compose down` -- stop the containers
 
@@ -35,10 +35,12 @@ Namely, the tools for:
 * `python run.py convert dna2rna "AGCT"` -- the input DNA sequence will be read from the command line
                                                   and the output RNA will be printed to stdout
 
-* `python run.py convert rna2protein -f (path-to-rna-input-file) -o (path-to-protein-output-file)`
+* `python run.py convert rna2protein -f [path-to-rna-input-file] -o [path-to-protein-output-file]`
    in this case, the input RNA sequence is read from file and the output protein sequence is written to another file                                     
 
-* `python run.py plot ./covid/ncbi_dataset/data/genomic.fna covid_test_plot.png` -- read the Covid-19 genetic code
+* `python run.py plot [path-to-input-file-with-DNA] [output-image-name]`
+
+  `python run.py plot ./covid/ncbi_dataset/data/genomic.fna covid_test_plot.png` -- read the Covid-19 genetic code
     from file and save the image with the GC-content plot to .png file (by default the images are saved to ./app/gc-content_ratios) 
 
 * `python run.py test converters` -- perform unit-tests for converter functions
