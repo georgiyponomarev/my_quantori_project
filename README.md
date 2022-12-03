@@ -20,14 +20,13 @@ Namely, the tools for:
 3. `python database_manager.py` to create a database and fill the tables. Must be executed the first, after the start of the containers 
 4. `python run.py [option] [parameters]` in.
 
-[option] may be one of:
-
-* convert
-* plot
-* test
-* help
+[option] must be one of the following: convert, plot, test, help
 
 [parameters] are described in detail in ./app/doc/run_help.txt
+
+5. `docker compose down` -- stop the containers
+
+---
 
 **Examples:**
 
@@ -45,8 +44,6 @@ Namely, the tools for:
 * `python run.py test plotter` -- perform unit-test for plotter function
 
 * `python run.py help` -- open the documentation for run.py script in *less* text viewer
-
-5. `docker compose down` -- stop the containers
 
 ---
 
