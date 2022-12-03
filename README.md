@@ -82,4 +82,4 @@ The folder `app` contains:
 * `legacy` -- a folder with old versions of the code files
 * `tests` -- a folder with the test data 
 
-`Dockerfile`
+*Dockerfile*
