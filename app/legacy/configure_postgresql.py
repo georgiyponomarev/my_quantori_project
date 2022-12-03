@@ -1,6 +1,6 @@
 import os
 
-#Install postgresql server: uncomment the following lines to install
+# Install postgresql server: uncomment the following lines to install
 os.system("sudo apt-get -y -qq update")
 os.system("sudo apt-get -y -qq install postgresql")
 os.system("sudo service postgresql start")

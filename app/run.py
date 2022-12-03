@@ -70,7 +70,8 @@ elif option == "convert":
         for alias, function in converters_aliases.items():
             print(f"{alias}:   calls function '{function.__name__}'")
         print()
-
+        exit()
+    
     # read DNA/RNA sequence from file
     if "-f" in args:
         path_to_file = args[2]

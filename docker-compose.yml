@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  app:
+    container_name: genetic_tool
+    build: ./app/
+  db:
+    container_name: postgres_database
+    build: ./database/

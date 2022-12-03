@@ -7,6 +7,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 
 
+
 engine = create_engine(DB_URI)
 Base = declarative_base()
 

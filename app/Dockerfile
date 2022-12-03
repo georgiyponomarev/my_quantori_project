@@ -1,18 +1,17 @@
 FROM python:3.9-slim
 
+# set working directory inside a container
 WORKDIR /usr/src/app
 
-RUN pip install --upgrade pip
-RUN apt-get update \
-    && apt-get -y install libpq-dev gcc \
-    && pip install psycopg2
+# install less text viewer to view the help
+RUN apt-get update && apt-get install less -y
 
-COPY ./requirements.txt /usr/src/app/requirements.txt
+# copy requirements.txt to the working directory
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-COPY . /usr/src/app
-
-RUN chmod a+x run.sh
+# copy everything to the working directory
+COPY . .
 
 # The command is executed when the container starts
 ENTRYPOINT ["/bin/sh","-c","sleep 3600"]
