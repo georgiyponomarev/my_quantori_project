@@ -52,6 +52,7 @@ Namely, the tools for:
 * folders: database (with the lonely Dockerfile) and app
 
 The folder 'app' contains:
+
 **Code files:**    
     * config.py -- contains a path to a folder with the app and a database URI
     * database_manager.py -- a program which creates four tables in a database:
@@ -66,6 +67,7 @@ The folder 'app' contains:
                        conversion
     * plot_gc_content.py -- contains a function which plots GC-content ratio
     * test_converters.py and test_plotter.py -- for unit-testing of the aforementioned functions
+
 **Folders:**
     * covid -- contains the Covid-19 genome (from https://www.ncbi.nlm.nih.gov/data-hub/taxonomy/2697049/)
     * data -- contains sqlite database and a json-file with a genetic code used to generate tables 
@@ -73,5 +75,6 @@ The folder 'app' contains:
     * gc-content_ratios -- a folder where the plots are saved
     * legacy -- a folder with old versions of the code files
     * tests -- a folder with the test data 
+
 **Dockerfile**
     
