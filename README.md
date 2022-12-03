@@ -62,8 +62,8 @@ The folder 'app' contains:
                              3. a table with codons
                              4. a table with amino acids
 * run.py -- main script which runs different functions (see the documentation
-                for run.py in ./app/doc/run_help.txt or by typing in the terminal:
-                `python ./app/run.py help`)
+                for run.py in ./app/doc/run_help.txt or by executing:
+                `python run.py help`)
 * converters.py -- contains functions for dna-to-rna, rna-to-protein and dna-to-protein
                        conversion
 * plot_gc_content.py -- contains a function which plots GC-content ratio
